@@ -1,0 +1,49 @@
+name: 問題回報
+description: 準交使用時遇到錯誤或結果不對
+labels: ["問題"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues 所有人都看得到。請勿貼上帳號密碼、準交網址、現場 QR code 或密鑰、真實工單，以及能辨識個人或公司的內容；截圖前先遮住。
+  - type: input
+    id: version
+    attributes:
+      label: 版本號
+      description: 網頁頁尾或「系統設定 → 使用資訊」，例如 0.3.0-beta.25 · b60d3e31
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 操作步驟
+      description: 從哪個畫面開始、按了什麼
+      placeholder: |
+        1. 開啟管理介面
+        2. 到「現場操作」按「新增加工單」
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 畫面顯示的內容
+      description: 錯誤訊息原文，或和預期不同的地方。可附截圖（先遮住敏感內容）。
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: 使用的裝置
+      options:
+        - 電腦瀏覽器
+        - 手機瀏覽器
+        - LINE 或其他 App 內開啟
+        - 其他
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 確認
+      options:
+        - label: 內容沒有帳號密碼、準交網址、現場密鑰、真實工單或可辨識個人／公司的資料
+          required: true
